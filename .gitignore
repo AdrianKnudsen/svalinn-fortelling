@@ -1,0 +1,9 @@
+# Claude-relaterte filer
+.claude/
+CLAUDE.md
+
+# Råopplastinger (ikke en del av nettsiden)
+uploads/
+
+# macOS
+.DS_Store
