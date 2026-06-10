@@ -204,7 +204,7 @@
             stroke-linejoin="round"
           />
         </g>
-        <g id="icon-doc-check">
+        <g id="icon-document-check">
           <path
             d="M6 3.5h8l4 4V20.5H6Z"
             fill="none"
@@ -287,7 +287,7 @@
             <line x1="18" y1="20" x2="18" y2="14" />
           </g>
         </g>
-        <g id="icon-doc">
+        <g id="icon-document">
           <path
             d="M6 3.5h8l4 4V20.5H6Z"
             fill="none"
@@ -403,7 +403,7 @@
             <span class="kicker">Et døgn med anlegget</span>
           </div>
           <div class="chapter-counter">
-            <b id="chapterIndex">1</b> / <span id="chapterTotal">7</span>
+            <b id="chapter-index">1</b> / <span id="chapter-total">7</span>
           </div>
         </div>
 
@@ -466,7 +466,7 @@
           </defs>
 
           <rect
-            id="skyTint"
+            id="sky-tint"
             x="0"
             y="0"
             width="1600"
@@ -681,9 +681,9 @@
                 opacity="0.06"
               />
             </g>
-            <g id="sunRays" opacity="0">
+            <g id="sun-rays" opacity="0">
               <polygon
-                id="panelSheen"
+                id="panel-sheen"
                 points="704,548 832,548 818,512 718,512"
                 fill="url(#panel-sun-gradient)"
                 opacity="0.4"
@@ -691,39 +691,39 @@
               <!-- Light reflection: a straight incident beam comes in from the sun and
                    hits the panel; on impact it produces a bright specular reflection
                    (angle in = angle out) plus a softer diffuse fan of scattered rays. -->
-              <g id="solarBeams">
+              <g id="solar-beams">
                 <path
-                  class="incident"
+                  class="beam-incoming"
                   pathLength="100"
                   d="M848.1,320.6 L780,514"
                 />
                 <path
-                  class="specular"
+                  class="beam-reflection"
                   pathLength="100"
                   d="M780,514 L730.2,372.5"
                 />
                 <path
-                  class="diffuse"
+                  class="beam-scatter"
                   pathLength="100"
                   d="M780,514 L746.7,471.4"
                 />
                 <path
-                  class="diffuse"
+                  class="beam-scatter"
                   pathLength="100"
                   d="M780,514 L757.5,458.4"
                 />
                 <path
-                  class="diffuse"
+                  class="beam-scatter"
                   pathLength="100"
                   d="M780,514 L775.2,468.2"
                 />
                 <path
-                  class="diffuse"
+                  class="beam-scatter"
                   pathLength="100"
                   d="M780,514 L791.6,459.2"
                 />
                 <path
-                  class="diffuse"
+                  class="beam-scatter"
                   pathLength="100"
                   d="M780,514 L802.5,471.6"
                 />
@@ -778,7 +778,7 @@
                 stroke="#7fb6d6"
                 stroke-width="1.8"
               />
-              <g id="fanBlades" fill="#9ab8d4">
+              <g id="fan-blades" fill="#9ab8d4">
                 <path d="M1050 568 q 8 -18 0 -26 q -8 8 0 26" />
                 <path d="M1050 568 q 18 8 26 0 q -8 -8 -26 0" />
                 <path d="M1050 568 q -8 18 0 26 q 8 -8 0 -26" />
@@ -836,7 +836,7 @@
             <!-- cold battery: tank, fill and frost — dropped 12 units so it rests on the floor -->
             <g id="cold-battery" transform="translate(0, 12)">
               <rect
-                id="tankGlow"
+                id="tank-glow"
                 x="1282"
                 y="506"
                 width="96"
@@ -866,7 +866,7 @@
               />
               <!-- cold-level fill (thermal battery) -->
               <rect
-                id="storeFill"
+                id="store-fill"
                 x="1294"
                 y="540"
                 width="72"
@@ -931,7 +931,7 @@
 
           <!-- ===== SVALINN hub (Brain.svg) ===== -->
           <g
-            id="svalinnLinks"
+            id="svalinn-links"
             stroke="#47D7AC"
             stroke-width="2"
             stroke-dasharray="2 8"
@@ -1003,7 +1003,7 @@
                   stroke-width="0.8"
                 />
                 <circle
-                  id="svalinnPulse"
+                  id="svalinn-pulse"
                   cx="161"
                   cy="35"
                   r="3"
@@ -1028,12 +1028,12 @@
                   <line x1="30" y1="104" x2="202" y2="104" />
                 </g>
                 <path
-                  id="tabletArea"
+                  id="tablet-area"
                   d="M30,110 C 56,107 70,86 96,82 C 120,78 132,98 156,98 C 178,98 192,84 202,80 L202,116 L30,116 Z"
                   fill="rgba(71,215,172,0.14)"
                 />
                 <path
-                  id="tabletChart"
+                  id="tablet-chart"
                   pathLength="100"
                   d="M30,110 C 56,107 70,86 96,82 C 120,78 132,98 156,98 C 178,98 192,84 202,80"
                   fill="none"
@@ -1042,7 +1042,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
-                <circle id="tabletDot" cx="0" cy="0" r="3" fill="#bff0e1" />
+                <circle id="tablet-dot" cx="0" cy="0" r="3" fill="#bff0e1" />
                 <!-- controls -->
                 <text x="24" y="138" class="tablet-control">
                   Svalinn-styring
@@ -1088,18 +1088,18 @@
         <!-- ===== NARRATIVE ===== -->
         <div class="narrative" id="narrative">
           <div class="narrative-kicker">
-            <span class="clock" id="narrativeClock">KL 03:00</span
-            ><span id="narrativeKicker">NATT</span>
+            <span class="clock" id="narrative-clock">KL 03:00</span
+            ><span id="narrative-kicker">NATT</span>
           </div>
-          <h1 id="narrativeTitle">Et anlegg som aldri sover</h1>
-          <p id="narrativeBody">
+          <h1 id="narrative-title">Et anlegg som aldri sover</h1>
+          <p id="narrative-body">
             Om morgenen er strømmen på sitt dyreste. <br />
             Et vanlig anlegg kjøper dyr effekt akkurat når prisen topper seg.
           </p>
         </div>
 
         <!-- ===== BRAIN PANEL (chapter: Svalinn) ===== -->
-        <div class="value-panel" id="brainPanel">
+        <div class="value-panel" id="brain-panel">
           <div class="value-panel-title">Slik tenker Svalinn</div>
           <div class="value-row">
             <span class="value-icon">
@@ -1149,7 +1149,7 @@
         </div>
 
         <!-- ===== VALUE PANEL (final chapter) ===== -->
-        <div class="value-panel" id="valuePanel">
+        <div class="value-panel" id="value-panel">
           <div class="value-panel-title">Slik skaper Svalinn verdi</div>
           <div class="value-row">
             <span class="value-icon">
@@ -1198,7 +1198,7 @@
           </div>
           <div class="value-row">
             <span class="value-icon">
-              <svg viewBox="0 0 24 24"><use href="#icon-doc-check" /></svg>
+              <svg viewBox="0 0 24 24"><use href="#icon-document-check" /></svg>
             </span>
             <div>
               <b>Dokumentert effekt</b
@@ -1212,7 +1212,7 @@
         </div>
 
         <!-- ===== CUSTOMER PORTAL PANEL (dashboard chapter) ===== -->
-        <div class="dashboard-panel" id="dashPanel">
+        <div class="dashboard-panel" id="dashboard-panel">
           <div class="dashboard-window">
             <div class="dashboard-bar">
               <span class="dashboard-logo">
@@ -1298,7 +1298,7 @@
                 </div>
                 <div class="dashboard-feature">
                   <span class="feature-icon">
-                    <svg viewBox="0 0 24 24"><use href="#icon-doc" /></svg>
+                    <svg viewBox="0 0 24 24"><use href="#icon-document" /></svg>
                   </span>
                   <div>
                     <b>Rapporter</b
@@ -1333,30 +1333,30 @@
         <div class="controls">
           <div class="track">
             <div class="axis">
-              <span class="fillLine" id="fillLine" style="width: 12%"></span>
+              <span class="fill-line" id="fill-line" style="width: 12%"></span>
             </div>
             <div class="ticks">
               <span>00</span><span>06</span><span>12</span><span>18</span
               ><span>24</span>
             </div>
-            <span class="marker" id="trackMarker" style="left: 12%"></span>
+            <span class="marker" id="track-marker" style="left: 12%"></span>
           </div>
-          <div class="nav-row">
+          <div class="navigation-row">
             <div class="dots" id="dots"></div>
             <span class="footer-credit">Designet og utviklet av <b>TRE</b></span>
-            <div class="nav-buttons">
-              <button class="nav-button" id="prevButton">
+            <div class="navigation-buttons">
+              <button class="navigation-button" id="previous-button">
                 <svg viewBox="0 0 24 24"><use href="#icon-arrow-left" /></svg>
                 Forrige
               </button>
               <button
-                class="nav-button play"
-                id="playButton"
+                class="navigation-button play"
+                id="play-button"
                 aria-label="Spill av"
               >
                 <svg viewBox="0 0 24 24"><use href="#icon-play" /></svg>
               </button>
-              <button class="nav-button primary" id="nextButton">
+              <button class="navigation-button primary" id="next-button">
                 Neste
                 <svg viewBox="0 0 24 24"><use href="#icon-arrow-right" /></svg>
               </button>

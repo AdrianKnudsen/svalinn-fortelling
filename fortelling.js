@@ -189,30 +189,30 @@
      Cheaper and tidier than calling getElementById on every chapter change.
      `flows` groups each energy flow with its soft-blur glow path [line, glow]. */
   const els = {
-    narrativeClock: $("narrativeClock"),
-    narrativeKicker: $("narrativeKicker"),
-    narrativeTitle: $("narrativeTitle"),
-    narrativeBody: $("narrativeBody"),
+    narrativeClock: $("narrative-clock"),
+    narrativeKicker: $("narrative-kicker"),
+    narrativeTitle: $("narrative-title"),
+    narrativeBody: $("narrative-body"),
     narrative: $("narrative"),
-    brainPanel: $("brainPanel"),
-    valuePanel: $("valuePanel"),
-    dashPanel: $("dashPanel"),
-    chapterIndex: $("chapterIndex"),
-    chapterTotal: $("chapterTotal"),
-    fillLine: $("fillLine"),
-    marker: $("trackMarker"),
+    brainPanel: $("brain-panel"),
+    valuePanel: $("value-panel"),
+    dashPanel: $("dashboard-panel"),
+    chapterIndex: $("chapter-index"),
+    chapterTotal: $("chapter-total"),
+    fillLine: $("fill-line"),
+    marker: $("track-marker"),
     dots: $("dots"),
-    prev: $("prevButton"),
-    next: $("nextButton"),
-    play: $("playButton"),
-    sky: $("skyTint"),
+    prev: $("previous-button"),
+    next: $("next-button"),
+    play: $("play-button"),
+    sky: $("sky-tint"),
     stars: $("stars"),
     cel: $("celestial"), // the sun/moon disc
     halo: $("halo"), // the soft-blur glow around the sun
-    storeFill: $("storeFill"), // the cold-level fill in the thermal battery
-    svalinnLinks: $("svalinnLinks"), // the dashed lines from Svalinn to each component
-    incidentBeam: document.querySelector("#solarBeams .incident"),
-    specularBeam: document.querySelector("#solarBeams .specular"),
+    storeFill: $("store-fill"), // the cold-level fill in the thermal battery
+    svalinnLinks: $("svalinn-links"), // the dashed lines from Svalinn to each component
+    incidentBeam: document.querySelector("#solar-beams .beam-incoming"),
+    specularBeam: document.querySelector("#solar-beams .beam-reflection"),
     flows: {
       grid: [$("flow-grid"), $("glow-grid")],
       solar: [$("flow-solar"), $("glow-solar")],

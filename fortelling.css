@@ -54,7 +54,6 @@ body {
     #021327 100%
   );
   box-shadow: 0 50px 120px -50px var(--navy);
-  border: solid 0.1rem var(--mint);
 }
 
 /* ---------- world scene ---------- */
@@ -70,7 +69,7 @@ body {
 .scene-dimmed .world {
   opacity: 0.3;
 }
-#skyTint {
+#sky-tint {
   transition: opacity 0.8s ease;
 }
 /* left text scene-overlay so narrative never sits on top of the scene */
@@ -130,11 +129,11 @@ body {
     stroke-dashoffset: -30;
   }
 }
-#fanBlades {
+#fan-blades {
   transform-box: fill-box;
   transform-origin: center;
 }
-.spin #fanBlades {
+.spin #fan-blades {
   animation: spin calc(2.6s / var(--anim)) linear infinite;
 }
 @keyframes spin {
@@ -142,7 +141,7 @@ body {
     transform: rotate(360deg);
   }
 }
-/* #svalinnPulse (the "AKTIV" dot) is set up further down: it starts grey and
+/* #svalinn-pulse (the "AKTIV" dot) is set up further down: it starts grey and
    still, then turns mint and begins pulsing during the tablet boot sequence. */
 @keyframes pulse {
   0%,
@@ -516,7 +515,7 @@ body {
   background: rgba(255, 255, 255, 0.14);
   border-radius: 2px;
 }
-.track .axis .fillLine {
+.track .axis .fill-line {
   position: absolute;
   left: 0;
   top: 0;
@@ -564,7 +563,7 @@ body {
   height: 100%;
 }
 
-.nav-row {
+.navigation-row {
   position: relative;
   display: flex;
   align-items: center;
@@ -609,12 +608,12 @@ body {
   width: 26px;
   border-radius: 5px;
 }
-.nav-buttons {
+.navigation-buttons {
   display: flex;
   gap: 12px;
   align-items: center;
 }
-.nav-button {
+.navigation-button {
   font-family: inherit;
   font-size: 14.5px;
   font-weight: 700;
@@ -629,26 +628,26 @@ body {
   gap: 9px;
   transition: all 0.2s ease;
 }
-.nav-button:hover {
+.navigation-button:hover {
   background: rgba(255, 255, 255, 0.12);
 }
-.nav-button svg {
+.navigation-button svg {
   width: 17px;
   height: 17px;
 }
-.nav-button.primary {
+.navigation-button.primary {
   background: var(--mint);
   color: #04223f;
   border-color: transparent;
 }
-.nav-button.primary:hover {
+.navigation-button.primary:hover {
   background: #5ee3bd;
 }
-.nav-button:disabled {
+.navigation-button:disabled {
   opacity: 0.3;
   cursor: default;
 }
-.nav-button.play {
+.navigation-button.play {
   padding: 12px;
   width: 46px;
   justify-content: center;
@@ -710,14 +709,14 @@ body {
   transform-box: fill-box;
   transform-origin: center;
 }
-#tabletChart {
+#tablet-chart {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
 }
-#tabletArea {
+#tablet-area {
   opacity: 0;
 }
-#tabletDot {
+#tablet-dot {
   opacity: 0;
   offset-path: path(
     "M30,110 C 56,107 70,86 96,82 C 120,78 132,98 156,98 C 178,98 192,84 202,80"
@@ -735,13 +734,13 @@ body {
 }
 
 /* Boot/update sequence — kicks in ~0.7s in, once the tablet has settled. */
-#component-svalinn.highlighted #tabletChart {
+#component-svalinn.highlighted #tablet-chart {
   animation: chart-draw 1.3s ease 0.85s forwards;
 }
-#component-svalinn.highlighted #tabletArea {
+#component-svalinn.highlighted #tablet-area {
   animation: chart-fade 0.9s ease 1.45s forwards;
 }
-#component-svalinn.highlighted #tabletDot {
+#component-svalinn.highlighted #tablet-dot {
   animation: chart-dot 1.5s ease 0.95s forwards;
 }
 /* Switches: the knob slides on while the track turns from grey (off) to mint (on). */
@@ -761,7 +760,7 @@ body {
 #component-svalinn.highlighted #tablet-live-badge {
   animation: status-activate-badge 0.5s ease 1.45s both;
 }
-#component-svalinn.highlighted #svalinnPulse {
+#component-svalinn.highlighted #svalinn-pulse {
   animation:
     status-activate-dot 0.5s ease 1.45s both,
     pulse calc(2s / var(--anim)) ease-in-out 1.95s infinite;
@@ -848,15 +847,15 @@ body {
 }
 
 /* ---------- cold thermal battery ---------- */
-#storeFill {
+#store-fill {
   transition:
     y 0.9s cubic-bezier(0.4, 0, 0.2, 1),
     height 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
-#tankGlow {
+#tank-glow {
   opacity: 0.12;
 }
-#component-cold-store.highlighted #tankGlow {
+#component-cold-store.highlighted #tank-glow {
   animation: tank-pulse 2.6s ease-in-out infinite;
 }
 @keyframes tank-pulse {
@@ -868,9 +867,7 @@ body {
     opacity: 0.42;
   }
 }
-/* Snowflakes that twinkle (fade + sparkle in place) to read as frost, not water.
-   fill-box keeps each crystal's scaling centered on itself. Staggered timing
-   so they don't all blink in unison. */
+/* Snowflakes that twinkle (fade + sparkle in place) */
 #frost-crystals .frost-crystal {
   transform-box: fill-box;
   transform-origin: center;
@@ -912,51 +909,48 @@ body {
 }
 
 /* ---------- solar generation (panels soak up the sun) ---------- */
-#sunRays {
+#sun-rays {
   opacity: 0;
 }
-#component-solar.highlighted #sunRays {
+#component-solar.highlighted #sun-rays {
   animation: sun-on 0.7s ease forwards;
 }
-#component-solar.highlighted #panelSheen {
+#component-solar.highlighted #panel-sheen {
   animation: panel-pulse 3.2s ease-in-out infinite;
 }
-/* Light-reflection model (see reference diagram): a straight incident beam comes
-   in from the sun and draws down to the panel; on impact a bright specular
-   reflection (angle in = angle out) plus a softer diffuse fan shoot outward.
-   pathLength=100 normalises each "draw". */
-#solarBeams path {
+/* Light-reflection model */
+#solar-beams path {
   fill: none;
   stroke-linecap: round;
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
   opacity: 0;
 }
-#solarBeams .incident,
-#solarBeams .specular {
+#solar-beams .beam-incoming,
+#solar-beams .beam-reflection {
   stroke: #fff4d0;
   stroke-width: 1.7;
   filter: drop-shadow(0 0 3px rgba(255, 205, 120, 0.85));
 }
 /* Diffuse: thick, soft and faint — a gentle scatter, not sharp lines. Drawn at
    full length (no "draw"); it just puffs in and fades out quickly. */
-#solarBeams .diffuse {
+#solar-beams .beam-scatter {
   stroke: #ffd98a;
   stroke-width: 2.6;
   stroke-dashoffset: 0;
   filter: blur(1px);
 }
 /* Phase 1 — incident beam draws in from the sun. */
-#component-solar.highlighted #solarBeams .incident {
-  animation: incident-draw 6s ease-in-out infinite;
+#component-solar.highlighted #solar-beams .beam-incoming {
+  animation: beam-incoming-draw 6s ease-in-out infinite;
 }
 /* Phase 2a — specular reflection draws out once the incident has landed. */
-#component-solar.highlighted #solarBeams .specular {
-  animation: reflect-draw 6s ease-out infinite;
+#component-solar.highlighted #solar-beams .beam-reflection {
+  animation: beam-reflection-draw 6s ease-out infinite;
 }
 /* Phase 2b — diffuse scatter: a brief, faint puff at the moment of impact. */
-#component-solar.highlighted #solarBeams .diffuse {
-  animation: diffuse-burst 6s ease-out infinite;
+#component-solar.highlighted #solar-beams .beam-scatter {
+  animation: beam-scatter-burst 6s ease-out infinite;
 }
 @keyframes sun-on {
   to {
@@ -982,7 +976,7 @@ body {
   }
 }
 /* Incident beam: draws in from the sun, holds while the reflection happens, fades. */
-@keyframes incident-draw {
+@keyframes beam-incoming-draw {
   0% {
     stroke-dashoffset: 100;
     opacity: 0;
@@ -1008,7 +1002,7 @@ body {
   }
 }
 /* Specular reflection: waits for the incident to land (28%), then draws out and fades. */
-@keyframes reflect-draw {
+@keyframes beam-reflection-draw {
   0% {
     stroke-dashoffset: 100;
     opacity: 0;
@@ -1039,7 +1033,7 @@ body {
 }
 /* Diffuse scatter: stays hidden until the incident lands (28%), then a brief,
    faint puff that fades out early — much sooner than the specular beam. */
-@keyframes diffuse-burst {
+@keyframes beam-scatter-burst {
   0% {
     opacity: 0;
   }
@@ -1274,14 +1268,14 @@ body {
   .flow.on {
     animation: none;
   }
-  .spin #fanBlades {
+  .spin #fan-blades {
     animation: none;
   }
-  #tabletChart {
+  #tablet-chart {
     stroke-dashoffset: 0;
   }
-  #tabletArea,
-  #tabletDot {
+  #tablet-area,
+  #tablet-dot {
     opacity: 1;
   }
   /* No slide/boot motion: show the tablet in place and already active (mint). */
@@ -1290,19 +1284,19 @@ body {
     transform: none;
   }
   #component-svalinn.highlighted .tablet-enter,
-  #component-svalinn.highlighted #tabletChart,
-  #component-svalinn.highlighted #tabletArea,
-  #component-svalinn.highlighted #tabletDot,
+  #component-svalinn.highlighted #tablet-chart,
+  #component-svalinn.highlighted #tablet-area,
+  #component-svalinn.highlighted #tablet-dot,
   #component-svalinn.highlighted #switch-knob-1,
   #component-svalinn.highlighted #switch-knob-2,
   #component-svalinn.highlighted #switch-track-1,
   #component-svalinn.highlighted #switch-track-2,
   #component-svalinn.highlighted #tablet-live-badge,
-  #component-svalinn.highlighted #svalinnPulse,
+  #component-svalinn.highlighted #svalinn-pulse,
   #component-svalinn.highlighted .tablet-live {
     animation: none;
   }
-  #component-cold-store.highlighted #tankGlow {
+  #component-cold-store.highlighted #tank-glow {
     animation: none;
   }
   /* Show the crystals steady (no twinkle) when motion is reduced. */
@@ -1313,12 +1307,12 @@ body {
   #halo {
     animation: none;
   }
-  #component-solar.highlighted #sunRays {
+  #component-solar.highlighted #sun-rays {
     animation: none;
     opacity: 1;
   }
-  #component-solar.highlighted #panelSheen,
-  #component-solar.highlighted #solarBeams path {
+  #component-solar.highlighted #panel-sheen,
+  #component-solar.highlighted #solar-beams path {
     animation: none;
   }
   .dashboard-line {
