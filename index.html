@@ -577,7 +577,7 @@
 
           <!-- ===== GRID transmission tower (background) + power cables ===== -->
           <g class="component" id="component-grid" opacity="0.9">
-            <!-- conductors sweeping in toward the facility, and off to the wider grid -->
+            <!-- conductors -->
             <g
               stroke="#3a5b7d"
               stroke-width="1.6"
@@ -688,9 +688,7 @@
                 fill="url(#panel-sun-gradient)"
                 opacity="0.4"
               />
-              <!-- Light reflection: a straight incident beam comes in from the sun and
-                   hits the panel; on impact it produces a bright specular reflection
-                   (angle in = angle out) plus a softer diffuse fan of scattered rays. -->
+              <!-- light reflection beams -->
               <g id="solar-beams">
                 <path
                   class="beam-incoming"
@@ -833,7 +831,7 @@
                 <line x1="1226" y1="596" x2="1272" y2="596" />
               </g>
             </g>
-            <!-- cold battery: tank, fill and frost — dropped 12 units so it rests on the floor -->
+            <!-- cold battery: tank, fill, frost -->
             <g id="cold-battery" transform="translate(0, 12)">
               <rect
                 id="tank-glow"
@@ -864,7 +862,7 @@
                 stroke="#1d567d"
                 stroke-width="1.2"
               />
-              <!-- cold-level fill (thermal battery) -->
+              <!-- cold-level fill -->
               <rect
                 id="store-fill"
                 x="1294"
@@ -875,7 +873,7 @@
                 clip-path="url(#store-clip)"
                 opacity="0.92"
               />
-              <!-- frost crystals (snowflakes) that twinkle inside the cold store -->
+              <!-- frost crystals -->
               <g
                 id="frost-crystals"
                 clip-path="url(#store-clip)"
